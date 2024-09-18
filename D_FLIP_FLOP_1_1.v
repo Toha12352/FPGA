@@ -3,9 +3,9 @@
 // Company: 
 // Engineer: 
 // 
-// Create Date:    11:11:42 04/25/2024 
+// Create Date:    04:37:50 04/25/2024 
 // Design Name: 
-// Module Name:    JK_FLIP_FLOP 
+// Module Name:    D_FLIP_FLOP_1_1 
 // Project Name: 
 // Target Devices: 
 // Tool versions: 
@@ -18,29 +18,16 @@
 // Additional Comments: 
 //
 //////////////////////////////////////////////////////////////////////////////////
-module JK_FLIP_FLOP(
-    input j,
-    input k,
-    input clk ,
-    input reset ,
-    output q,
-    output qn
-    );
-	reg q;
-  reg qn;
+module D_FLIP_FLOP_1_1(d,clk,q);
+   
+  input d;
+    input clk;
+    output reg q;
+   
+always @ (d or clk)
 
-	initial begin 
-	  q = 1'b0;
-	  qn= ~q;
-	  end 
-	  	always @ (posedge clk)
+begin  
+q = d;
+end
 
-	begin 
-	   case ({j,k})
-		2'b01:q=0;
-		2'b10:q=1;
-		2'b11:q=~q;
-		endcase
-		qn=~q;
-	end
- endmodule
+endmodule
