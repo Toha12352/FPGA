@@ -1,3 +1,4 @@
+`timescale 1ns/1ps
 module FULL_ADDER(
    input A,      // First input bit
     input B,      // Second input bit
